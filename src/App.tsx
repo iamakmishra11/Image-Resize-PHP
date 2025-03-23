@@ -66,7 +66,7 @@ function App() {
       formData.append("width", resizeWidth.toString());
       formData.append("height", resizeHeight.toString());
 
-      const response = await fetch(`http://localhost/PROJECT/backend/index.php`, {
+      const response = await fetch(`http://image-resizerphp.kesug.com/index.php`, {
         method: "POST",
         body: formData,
       });
