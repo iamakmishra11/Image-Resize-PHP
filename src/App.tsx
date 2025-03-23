@@ -66,13 +66,13 @@ function App() {
       formData.append("width", resizeWidth.toString());
       formData.append("height", resizeHeight.toString());
 
-      const response = await fetch(`http://image-resizerphp.kesug.com/index.php`, {
+      const response = await fetch(http://localhost/PROJECT/backend/index.php, {
         method: "POST",
         body: formData,
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(HTTP error! status: ${response.status});
       }
 
       const data: ResizeResponse = await response.json();
@@ -104,7 +104,7 @@ function App() {
 
   const downloadSingle = async (image: ResizedImage) => {
     try {
-  const imageUrl = `http://image-resizerphp.kesug.com/${image.path}`;
+      const imageUrl = http://localhost/PROJECT/backend/${image.path};
       const response = await fetch(imageUrl);
       if (!response.ok) throw new Error('Failed to fetch image');
       const blob = await response.blob();
@@ -165,10 +165,10 @@ function App() {
         <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-8 mb-8 transition-all duration-300 hover:shadow-2xl animate-slide-up">
           <div
             {...getRootProps()}
-            className={`border-3 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${isDragActive ? 'border-indigo-500 bg-indigo-50 scale-102 animate-pulse-border' : 'border-gray-300 hover:border-indigo-400'}`}
+            className={border-3 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${isDragActive ? 'border-indigo-500 bg-indigo-50 scale-102 animate-pulse-border' : 'border-gray-300 hover:border-indigo-400'}}
           >
             <input {...getInputProps()} />
-            <ImagePlus className={`mx-auto h-16 w-16 ${isDragActive ? 'text-indigo-600' : 'text-indigo-400'} mb-4 transition-colors duration-300`} />
+            <ImagePlus className={mx-auto h-16 w-16 ${isDragActive ? 'text-indigo-600' : 'text-indigo-400'} mb-4 transition-colors duration-300} />
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">{isDragActive ? 'Drop your images here!' : 'Drag & Drop Images'}</h3>
             <p className="text-lg text-gray-600">or click to select files from your computer</p>
             <p className="text-sm text-gray-500 mt-2">Supports: PNG, JPG, JPEG, GIF (Max size: 10MB)</p>
@@ -215,7 +215,7 @@ function App() {
                 <button
                   onClick={resizeImages}
                   disabled={isProcessing}
-                  className={`flex items-center px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 transform hover:scale-105 ${isProcessing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:shadow-lg'}`}
+                  className={flex items-center px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 transform hover:scale-105 ${isProcessing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:shadow-lg'}}
                 >
                   {isProcessing ? (
                     <div className="flex items-center">
@@ -233,7 +233,7 @@ function App() {
                   <button
                     onClick={downloadAll}
                     disabled={isProcessing}
-                    className={`flex items-center px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 transform hover:scale-105 ${isProcessing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg'}`}
+                    className={flex items-center px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 transform hover:scale-105 ${isProcessing ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg'}}
                   >
                     <Download className="w-5 h-5 mr-2" />
                     Download All
