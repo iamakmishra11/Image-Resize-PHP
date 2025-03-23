@@ -104,7 +104,7 @@ function App() {
 
   const downloadSingle = async (image: ResizedImage) => {
     try {
-      const imageUrl = `http://localhost/PROJECT/backend/${image.path}`;
+  const imageUrl = `http://image-resizerphp.kesug.com/${image.path}`;
       const response = await fetch(imageUrl);
       if (!response.ok) throw new Error('Failed to fetch image');
       const blob = await response.blob();
